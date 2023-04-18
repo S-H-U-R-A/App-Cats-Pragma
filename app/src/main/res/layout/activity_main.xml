@@ -9,9 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cats"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         tools:listitem="@layout/cats_item_list"
-        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

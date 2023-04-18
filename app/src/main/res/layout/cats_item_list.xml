@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_weight="1"
-            tools:text="Raza: " />
+            android:text="Raza: " />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mtv_title"
@@ -38,7 +38,7 @@
         <ImageView
             android:id="@+id/iv_image_cat"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="382dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintEnd_toEndOf="@id/mtv_title"
@@ -53,7 +53,7 @@
             app:layout_constraintStart_toStartOf="@id/iv_image_cat"
             app:layout_constraintTop_toBottomOf="@id/iv_image_cat"
             app:layout_constraintEnd_toStartOf="@id/mtv_intelligence"
-            tools:text="Pais de origen" />
+            android:text="País de origen:" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mtv_intelligence"
@@ -63,7 +63,7 @@
             app:layout_constraintStart_toEndOf="@id/mtv_country"
             app:layout_constraintTop_toBottomOf="@id/iv_image_cat"
             app:layout_constraintEnd_toEndOf="@id/iv_image_cat"
-            tools:text="Inteligencia" />
+            android:text="Inteligencia:" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mtv_origin"

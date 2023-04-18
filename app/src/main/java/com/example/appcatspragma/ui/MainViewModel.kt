@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.appcatspragma.data.model.Cat
 import com.example.appcatspragma.domain.usecases.GetCatsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,8 +20,12 @@ class MainViewModel @Inject constructor(
     private var _uiState: MutableStateFlow<MainUiState> = MutableStateFlow( MainUiState() )
     val uiState = _uiState.asStateFlow()
 
-    fun getCats() {
-        viewModelScope.launch {
+    init {
+        getCats()
+    }
+
+    private fun getCats() {
+        viewModelScope.launch(Dispatchers.IO) {
 
             _uiState.update {
                 it.copy(
@@ -29,6 +34,7 @@ class MainViewModel @Inject constructor(
             }
 
             try {
+
                 useCaseGetAllCats().onEach { listCats ->
                     _uiState.update {
                         it.copy(
@@ -37,13 +43,16 @@ class MainViewModel @Inject constructor(
                         )
                     }
                 }.launchIn(viewModelScope)
+
             } catch (e: Exception) {
+
                 _uiState.update {
                     it.copy(
                         isLoading = false,
                         userMessage = e.message.toString()
                     )
                 }
+
             }
         }
     }
