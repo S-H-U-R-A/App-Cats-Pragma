@@ -57,8 +57,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleListCat( listCats: List<Cat> ) {
-        //SE ENVIA LA LISTA DE GATOS AL ADAPTER
-        Log.d("MAINACTIVITY", listCats.toString() )
         adapterRvCats.submitList( listCats )
     }
 

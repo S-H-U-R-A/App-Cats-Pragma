@@ -11,7 +11,7 @@ class CatsNetworkDataSourceImpl @Inject constructor(
     private val catsApiService: CatsApiService
 ) : CatsDataSource{
 
-    override suspend fun getCats(apiKey: String): Flow<ResponseCatsList> = flow {
+    override fun getCats(apiKey: String): Flow<ResponseCatsList> = flow {
         emit( catsApiService.getAllCats(apiKey) )
     }
 

@@ -36,6 +36,7 @@ object NetworkModule {
             .addConverterFactory(
                 GsonConverterFactory.create()
             )
+            .client( client )
             .build()
             .create( CatsApiService::class.java )
 

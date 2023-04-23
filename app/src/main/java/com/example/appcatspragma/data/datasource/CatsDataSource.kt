@@ -4,7 +4,7 @@ import com.example.appcatspragma.data.model.ResponseCatsList
 import kotlinx.coroutines.flow.Flow
 
 interface CatsDataSource {
-    suspend fun getCats(
+    fun getCats(
         apiKey: String
     ) : Flow<ResponseCatsList>
 
